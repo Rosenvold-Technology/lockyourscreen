@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rosenvold LockYourScreen</title>
+  <meta name="description" content="Fun screen locking reminder — lock.rosenvold.tech" />
+  <link rel="icon" href="favicon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+
+  <!-- App wrapper -->
+  <main id="app" class="hidden flex flex-col min-h-screen">
+
+    <!-- Top bar -->
+    <header class="sticky top-0 flex justify-between items-center px-4 py-3 bg-gray-800 bg-opacity-80 backdrop-blur border-b border-gray-700">
+      <div class="font-bold text-lg flex items-center gap-2">
+        🔒 Rosenvold LockYourScreen
+      </div>
+      <div class="flex gap-2">
+        <button id="helpBtn" class="border border-gray-600 px-3 py-1 rounded hover:bg-gray-700">How to lock</button>
+        <button id="funMenuBtn" class="border border-pink-600 text-pink-400 px-3 py-1 rounded hover:bg-pink-600 hover:text-white">Fun Menu 🎭</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="flex flex-col items-center text-center mt-10 px-4">
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-2">You didn’t lock your screen.</h1>
+      <p class="text-gray-400 mb-6">It’s been <span id="timer" class="font-mono">0</span> seconds since this page opened.</p>
+      <div class="flex gap-4 flex-wrap justify-center mb-6">
+        <button id="fullscreenBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded">Go Full Screen</button>
+      </div>
+    </section>
+
+    <!-- Large image -->
+    <section id="gallery" class="flex-1 flex items-center justify-center p-6">
+      <!-- Image inserted by JS -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-4 py-4 text-sm text-gray-500 flex justify-between border-t border-gray-800">
+      <span>Tip: Press <kbd class="bg-gray-800 px-1 rounded">Esc</kbd> to exit full screen.</span>
+      <span><a href="https://lock.rosenvold.tech" class="hover:text-gray-300">lock.rosenvold.tech</a></span>
+    </footer>
+  </main>
+
+  <!-- OS Help Modal -->
+  <dialog id="helpModal" class="rounded-lg border border-gray-700 p-6 bg-gray-800 text-gray-100 max-w-xl w-full">
+    <h2 class="text-xl font-bold mb-4">How to lock your screen</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <div>
+        <h3 class="font-semibold mb-1">Windows</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Press <kbd class="bg-gray-700 px-1 rounded">⊞ Win</kbd> + <kbd class="bg-gray-700 px-1 rounded">L</kbd></li>
+          <li>or Ctrl + Alt + Del → Lock</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-1">macOS</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Press <kbd class="bg-gray-700 px-1 rounded">Ctrl</kbd> + <kbd class="bg-gray-700 px-1 rounded">⌘</kbd> + <kbd class="bg-gray-700 px-1 rounded">Q</kbd></li>
+          <li>or Apple menu → Lock Screen</li>
+        </ul>
+      </div>
+    </div>
+    <form method="dialog" class="mt-4">
+      <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded">Close</button>
+    </form>
+  </dialog>
+
+  <!-- Fun Menu Modal -->
+  <dialog id="funMenuModal" class="rounded-lg border border-gray-700 p-6 bg-gray-800 text-gray-100 max-w-xl w-full">
+    <h2 class="text-xl font-bold mb-4">🎭 Fun Menu</h2>
+    <div class="flex flex-wrap gap-3">
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&loop=1" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded">Never Gonna Give You Up 🎵</a>
+      <a href="https://fakeupdate.net/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Fake Windows Update 💻</a>
+    </div>
+    <form method="dialog" class="mt-4">
+      <button class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded">Close</button>
+    </form>
+  </dialog>
+
+  <script src="script.js" type="module"></script>
+  <script>
+    document.getElementById('funMenuBtn').addEventListener('click', () => {
+      document.getElementById('funMenuModal').showModal();
+    });
+  </script>
+</body>
+</html>
