@@ -4,8 +4,8 @@
 const IMAGES = [
   // Example:
   { src: "images/saddog1.jpg", cap: "Doggo is said you didn't lock your computer.... 😢" },
-  { src: "images/vader.jpeg", cap: "Vader finds your unlocked screen disturbing." }
-  { src: "images/ghost.jpeg", cap: "Wise enough to know… you should’ve locked that screen." }
+  { src: "images/vader.jpeg", cap: "Vader finds your unlocked screen disturbing." },
+  { src: "images/ghost.jpeg", cap: "Wise enough to know… you should’ve locked that screen." },
   { src: "images/owl.jpeg", cap: "Boo-hoo… your security habits scare me more than I scare you." }
   // { src: "images/funny.png", cap: "Funny caption" },
 ];
